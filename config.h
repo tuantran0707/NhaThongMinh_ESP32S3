@@ -4,21 +4,24 @@
 #pragma once
 
 // ===================== MAT KHAU / THE / VAN TAY =====================
-#define PASSWORD            "1234"     // nhap tren keypad roi bam '#'  ('*' = xoa)
+#define PASSWORD            "CHANGE_ME" // DOI thanh 4..8 chu so; nhap tren keypad roi bam '#'
 // UID the RFID duoc phep mo cua. Quet the -> Serial Monitor in UID -> chep vao day
-static const char *RFID_UIDS[] = {
-  "DE AD BE EF",
-  "12 34 56 78",
+inline constexpr const char *RFID_UIDS[] = {
+  "",                                    // thay bang UID that, vi du "AA BB CC DD"
 };
 #define FP_MIN_CONFIDENCE   50         // do tin cay toi thieu cua van tay
 #define MAX_FAIL            3          // sai lien tiep bao nhieu lan thi bao dong xam nhap
 #define INTRUDER_ALARM_MS   5000       // thoi gian coi keu khi bi xam nhap
+#define ACCESS_LOCKOUT_MS   60000      // khoa cac cach mo cua sau MAX_FAIL
+#define SERIAL_AUTH_MS      60000      // AUTH <PASSWORD> cho phep dang ky van tay trong 60 s
+#define FP_ENROLL_TIMEOUT_MS 15000     // timeout cho tung buoc dang ky van tay
+#define ACCESS_REQUIRE_PCF  true       // PCF8574 loi -> khong mo cua (fail closed)
 
 // ===================== GIONG NOI =====================
 #define VOICE_GAIN_SHIFT    14         // PHAI GIONG GAIN_SHIFT luc thu am mau!
 #define OWNER_THRESHOLD     0.85f      // diem chu_nha >= nguong nay -> la chu nha
-#define VOICE_OPENS_DOOR    true       // giong chu nha dung -> mo cua
-#define VOICE_AUTO          true       // true: tu nghe lien tuc | false: chi nghe khi bam phim 'A'
+#define VOICE_OPENS_DOOR    false      // true co nguy co bi mo bang ban ghi am (replay)
+#define VOICE_AUTO          false      // an toan hon: chi nghe khi bam phim 'A'
 #define VAD_MIN_RMS         600        // muc am toi thieu coi la co nguoi noi (tang neu hay bat nham)
 #define VAD_RATIO           4.0f       // to hon tieng nen bao nhieu lan
 #define VAD_MIN_SPEECH_MS   300        // phai noi lien tuc it nhat bay nhieu ms

@@ -50,9 +50,9 @@
 // =====================================================================
 #define KEYPAD_ROWS     4
 #define KEYPAD_COLS     4
-static byte rowPins[KEYPAD_ROWS] = {1, 2, 42, 41};    // R1..R4
-static byte colPins[KEYPAD_COLS] = {40, 39, 47, 21};  // C1..C4
-static char keys[KEYPAD_ROWS][KEYPAD_COLS] = {
+inline byte rowPins[KEYPAD_ROWS] = {1, 2, 42, 41};    // R1..R4
+inline byte colPins[KEYPAD_COLS] = {40, 39, 47, 21};  // C1..C4
+inline char keys[KEYPAD_ROWS][KEYPAD_COLS] = {
   {'1', '2', '3', 'A'},
   {'4', '5', '6', 'B'},
   {'7', '8', '9', 'C'},
