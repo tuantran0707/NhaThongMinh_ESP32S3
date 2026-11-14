@@ -4,7 +4,7 @@
 #pragma once
 
 // ===================== MAT KHAU / THE / VAN TAY =====================
-#define PASSWORD            "CHANGE_ME" // DOI thanh 4..8 chu so; nhap tren keypad roi bam '#'
+#define PASSWORD            "123456" // DOI thanh 4..8 chu so; nhap tren keypad roi bam '#'
 // UID the RFID duoc phep mo cua. Quet the -> Serial Monitor in UID -> chep vao day
 inline constexpr const char *RFID_UIDS[] = {
   "",                                    // thay bang UID that, vi du "AA BB CC DD"
